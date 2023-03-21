@@ -1,4 +1,4 @@
-import { Flex, Grid } from "./Common/UI/Atoms";
+import { Button, Flex, Grid } from "./Common/UI/Atoms";
 import styled from "styled-components";
 
 function App() {
@@ -17,9 +17,9 @@ function App() {
                     align={"center"}
                     fill
                 >
-                    <Flex fill />
-                    수정 테스트
-                    <Flex fill />
+                    <Button fill onClick={() => alert("test")}>
+                        test
+                    </Button>
                 </Flex>
             </Wrapper>
         </div>
