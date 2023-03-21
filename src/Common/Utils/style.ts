@@ -1,6 +1,7 @@
 import { css } from "styled-components";
+import { Unit } from "../Model/Type";
 
-export const arraySet = (target?: Array<number | string>) => {
+export const arraySet = (target?: readonly [Unit?, Unit?, Unit?, Unit?]) => {
     const isArray = Array.isArray(target);
     let style = "";
     isArray

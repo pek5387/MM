@@ -1,17 +1,9 @@
-export type Unit =
-    | "auto"
-    | `${number}px`
-    | `${number}em`
-    | `${number}rem`
-    | `${number}vw`
-    | `${number}vh`
-    | `${number}vmin`
-    | `${number}vmax`
-    | `${number}%`;
+import { Unit } from "./Type";
 
 export interface StyleDefaultProps {
-    padding?: Array<number | Unit>;
-    margin?: Array<number | Unit>;
+    // padding?: Array<Unit>;
+    padding?: [Unit, Unit?, Unit?, Unit?];
+    margin?: [Unit, Unit?, Unit?, Unit?];
     rowArea?: `${number}/${number}`;
     columnArea?: `${number}/${number}`;
     children?: React.ReactNode;
@@ -20,7 +12,7 @@ export interface StyleDefaultProps {
 }
 
 export interface Display extends StyleDefaultProps {
-    gap?: Array<number | Unit>;
+    gap?: [Unit, Unit?];
     align?: "left" | "center" | "right" | "side";
     valign?: "top" | "middle" | "bottom" | "side";
 }
