@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { alignSet, arraySet, gridPositionSet } from "../../../Utils/style";
+import { alignSet, arraySet } from "../../../Utils/style";
 import { Todo } from "./interface";
 
 const gridSet = (target?: any) => {
@@ -23,10 +23,8 @@ export const Wrapper = styled.div`
         row,
         align,
         valign,
-        columnStart,
-        columnEnd,
-        rowStart,
-        rowEnd,
+        columnArea,
+        rowArea,
     }: Todo) => `
     display: grid;
     grid-template-rows: ${gridSet(row)};
@@ -36,7 +34,7 @@ export const Wrapper = styled.div`
     gap:${arraySet(gap)};
     justify-content:${alignSet(align)};
     align-items:${alignSet(valign)};
-    grid-column: ${gridPositionSet(columnStart, columnEnd)};
-    grid-row: ${gridPositionSet(rowStart, rowEnd)};
+    grid-column: ${columnArea || ""};
+    grid-row: ${rowArea || ""};
 `}
 `;

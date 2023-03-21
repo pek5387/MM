@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { alignSet, arraySet, gridPositionSet } from "../../../Utils/style";
+import { alignSet, arraySet } from "../../../Utils/style";
 import { Todo } from "./interface";
 
 export const Wrapper = styled.div`
@@ -11,20 +11,18 @@ export const Wrapper = styled.div`
         fill,
         align,
         valign,
-        rowStart,
-        rowEnd,
-        columnStart,
-        columnEnd,
+        columnArea,
+        rowArea,
     }: Todo) => css`
         display: flex;
-        padding: ${arraySet(padding)};
-        margin: ${arraySet(margin)};
         gap: ${arraySet(gap)};
         flex-direction: ${column ? "column" : "row"};
-        ${fill ? "flex:1;" : ""}
-        justify-content:${alignSet(column ? valign : align)};
+        justify-content: ${alignSet(column ? valign : align)};
         align-items: ${alignSet(column ? align : valign)};
-        grid-column: ${gridPositionSet(columnStart, columnEnd)};
-        grid-row: ${gridPositionSet(columnStart, columnEnd)};
+        ${fill ? "flex:1;" : ""}
+        padding: ${arraySet(padding)};
+        margin: ${arraySet(margin)};
+        grid-column: ${columnArea || ""};
+        grid-row: ${rowArea || ""};
     `}
 `;

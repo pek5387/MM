@@ -27,6 +27,3 @@ export const alignSet = (target?: string) => {
             return "";
     }
 };
-
-export const gridPositionSet = (i?: number, j?: number) =>
-    [i, j].includes(undefined) ? "" : i + "/" + j;
