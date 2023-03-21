@@ -13,7 +13,7 @@ const Button: React.FC<Todo> = ({
     const navigate = useNavigate();
     return (
         <Wrapper
-            className={"grid " + (className || "")}
+            className={"button " + (className || "")}
             onClick={to ? () => navigate(to) : onClick}
             {...props}
         >
