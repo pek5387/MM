@@ -16,7 +16,7 @@ export interface StyleDefaultProps {
     columnArea?: `${number}/${number}`;
     children?: React.ReactNode;
     className?: string;
-    // fill: boolean;\
+    fill?: boolean;
 }
 
 export interface Display extends StyleDefaultProps {

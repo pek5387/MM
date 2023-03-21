@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { alignSet, arraySet } from "../../../Utils/style";
 import { Todo } from "./interface";
 
@@ -15,26 +15,13 @@ const gridSet = (target?: any) => {
 };
 
 export const Wrapper = styled.div`
-    ${({
-        padding,
-        gap,
-        margin,
-        column,
-        row,
-        align,
-        valign,
-        columnArea,
-        rowArea,
-    }: Todo) => `
-    display: grid;
-    grid-template-rows: ${gridSet(row)};
-    grid-template-columns: ${gridSet(column)};
-    padding:${arraySet(padding)};
-    margin:${arraySet(margin)};
-    gap:${arraySet(gap)};
-    justify-content:${alignSet(align)};
-    align-items:${alignSet(valign)};
-    grid-column: ${columnArea || ""};
-    grid-row: ${rowArea || ""};
-`}
+    ${({ gap, column, row, align, valign }: Todo) => `
+        display: grid;
+        grid-template-rows: ${gridSet(row)};
+        grid-template-columns: ${gridSet(column)};
+        gap: ${arraySet(gap)};
+        justify-content: ${alignSet(align)};
+        align-items: ${alignSet(valign)};
+    `}
+    ${({ theme: { unit } }) => unit}
 `;
