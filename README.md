@@ -4,10 +4,9 @@ Typescript로 진행 될 MM 홈페이지 git 공유소입니다
 
 -   [Hooks] - 리액트 커스텀 훅
 -   [service] - API 설정 및 모음
+-   [Model] - 공통 타입스크립트 타입,인터페이스
 -   [UI] - 공통 컴포넌트
--   [store] - react-redux store
--   [utils] - 공통 함수
--   [Vaildation] - Vaildatio 함수
+-   [Utils] - 공통 함수
 
 ## style
 
