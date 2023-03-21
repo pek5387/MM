@@ -14,7 +14,7 @@ function App() {
                     fill
                 >
                     <Flex fill />
-                    <Flex>123</Flex>
+                    <Flex>수정 테스트</Flex>
                 </Flex>
             </Wrapper>
         </div>
