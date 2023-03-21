@@ -1,16 +1,17 @@
 Typescript로 진행 될 MM 홈페이지 git 공유소입니다
 
-폴더 구성도
-------------------------------------------
+## 폴더 구성도
+
 Common
 └ Components
 └ Hooks
 └ Model
-  └ Interface
-  └ Type
+└ Interface
+└ Type
 └ UI
-  └ Atoms
-  └ Molecules
-  └ Template
+└ Atoms
+└ Molecules
+└ Template
 └ Utils
-------------------------------------------
+
+---
