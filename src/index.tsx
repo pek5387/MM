@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import GlobalStyle from "./Common/UI/GlobalStyles";
+import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import theme from "./Common/UI/theme";
 
@@ -12,8 +13,10 @@ const root = ReactDOM.createRoot(
 root.render(
     <React.StrictMode>
         <ThemeProvider theme={theme}>
-            <GlobalStyle />
-            <App />
+            <BrowserRouter>
+                <GlobalStyle />
+                <App />
+            </BrowserRouter>
         </ThemeProvider>
     </React.StrictMode>
 );

@@ -1,22 +1,25 @@
 import React from "react";
-import { useNavigate as navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Todo } from "./model";
 import { Wrapper } from "./styled";
 
-const index: React.FC<Todo> = ({
+const Button: React.FC<Todo> = ({
     className,
     onClick,
     to,
     children,
     ...props
-}) => (
-    <Wrapper
-        className={"grid " + (className || "")}
-        onClick={to ? () => navigate()(to) : onClick}
-        {...props}
-    >
-        {children}
-    </Wrapper>
-);
+}) => {
+    const navigate = useNavigate();
+    return (
+        <Wrapper
+            className={"grid " + (className || "")}
+            onClick={to ? () => navigate(to) : onClick}
+            {...props}
+        >
+            {children}
+        </Wrapper>
+    );
+};
 
-export default index;
+export default Button;
