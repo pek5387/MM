@@ -10,15 +10,16 @@ function App() {
                     <Flex fill />
                 </Flex>
                 <Flex
-                    padding={["40px"]}
+                    column
                     rowArea={"2/5"}
-                    columnArea={"2/4"}
+                    columnArea={"1/4"}
+                    padding={["20px"]}
                     align={"center"}
                     fill
                 >
                     <Flex fill />
                     수정 테스트
-                    <Flex />
+                    <Flex fill />
                 </Flex>
             </Wrapper>
         </div>
