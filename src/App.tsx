@@ -13,7 +13,7 @@ function App() {
                     column
                     rowArea={"2/5"}
                     columnArea={"1/4"}
-                    padding={["20px"]}
+                    padding={["20px", undefined, "40px"]}
                     align={"center"}
                     fill
                 >

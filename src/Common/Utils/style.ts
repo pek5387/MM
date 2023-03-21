@@ -6,7 +6,8 @@ export const arraySet = (target?: readonly [Unit?, Unit?, Unit?, Unit?]) => {
     let style = "";
     isArray
         ? target.map((i) => {
-              return (style += typeof i === "number" ? i + "rem " : i + " ");
+              return (style +=
+                  typeof i === "number" ? i + "rem " : i ? i + " " : "0 ");
           })
         : (style += "");
 

@@ -1,5 +1,4 @@
 import { Unit } from "./Type";
-
 export interface StyleDefaultProps {
     // padding?: Array<Unit>;
     padding?: [Unit, Unit?, Unit?, Unit?];
@@ -10,7 +9,6 @@ export interface StyleDefaultProps {
     className?: string;
     fill?: boolean;
 }
-
 export interface Display extends StyleDefaultProps {
     gap?: [Unit, Unit?];
     align?: "left" | "center" | "right" | "side";
