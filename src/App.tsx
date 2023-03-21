@@ -5,16 +5,12 @@ function App() {
     return (
         <div className="App">
             <Wrapper column={4} row={4}>
-                <Flex
-                    column
-                    rowStart={3}
-                    rowEnd={4}
-                    columnStart={3}
-                    columnEnd={4}
-                    fill
-                >
+                <Flex column rowArea={"1/4"} fill>
+                    test1
                     <Flex fill />
-                    <Flex>수정 테스트</Flex>
+                </Flex>
+                <Flex rowArea={"2/5"} columnArea={"2/3"}>
+                    수정 테스트
                 </Flex>
             </Wrapper>
         </div>
