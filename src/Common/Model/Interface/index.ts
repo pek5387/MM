@@ -1,4 +1,5 @@
-import { Unit } from "./Type";
+import { Unit } from "../Type";
+
 export interface StyleDefaultProps {
     // padding?: Array<Unit>;
     padding?: [Unit, Unit?, Unit?, Unit?];
