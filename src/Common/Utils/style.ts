@@ -1,3 +1,5 @@
+import { css } from "styled-components";
+
 export const arraySet = (target?: Array<number | string>) => {
     const isArray = Array.isArray(target);
     let style = "";
@@ -27,3 +29,9 @@ export const alignSet = (target?: string) => {
             return "";
     }
 };
+
+export const unitStyle = css`
+    ${({ theme: { unit }, ...props }) => `
+    ${unit(props)}
+`}
+`;

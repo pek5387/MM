@@ -9,8 +9,16 @@ function App() {
                     test1
                     <Flex fill />
                 </Flex>
-                <Flex rowArea={"2/5"} columnArea={"2/3"}>
+                <Flex
+                    padding={["40px"]}
+                    rowArea={"2/5"}
+                    columnArea={"2/4"}
+                    align={"center"}
+                    fill
+                >
+                    <Flex fill />
                     수정 테스트
+                    <Flex />
                 </Flex>
             </Wrapper>
         </div>
