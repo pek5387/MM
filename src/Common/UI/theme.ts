@@ -1,9 +1,10 @@
 import { css } from "styled-components";
-import { arraySet } from "../Utils/style";
 import { StyleDefaultProps } from "../Model/Interface";
+import { arraySet } from "../Utils/style";
 
 const unit = css`
     ${({ padding, margin, columnArea, rowArea, fill }: StyleDefaultProps) => `
+    display:flex;
     padding:${arraySet(padding)};
     margin:${arraySet(margin)};
     ${fill ? "flex:1;" : ""}

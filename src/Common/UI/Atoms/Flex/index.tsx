@@ -1,12 +1,10 @@
-import { Todo } from "./interface";
+import { Todo } from "./model";
 import { Wrapper } from "./styled";
 
-const index = ({ children, className, ...props }: Todo) => {
-    return (
-        <Wrapper className={"flex " + (className || "")} {...props}>
-            {children}
-        </Wrapper>
-    );
-};
+const index: React.FC<Todo> = ({ children, className, ...props }) => (
+    <Wrapper className={"flex " + (className || "")} {...props}>
+        {children}
+    </Wrapper>
+);
 
 export default index;

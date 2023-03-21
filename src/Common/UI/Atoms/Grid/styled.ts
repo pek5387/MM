@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 import { alignSet, arraySet } from "../../../Utils/style";
-import { Todo } from "./interface";
+import { Todo } from "./model";
 
 const gridSet = (target?: any) => {
     const type = typeof target;
@@ -15,6 +15,7 @@ const gridSet = (target?: any) => {
 };
 
 export const Wrapper = styled.div`
+    ${({ theme: { unit } }) => unit}
     ${({ gap, column, row, align, valign }: Todo) => `
         display: grid;
         grid-template-rows: ${gridSet(row)};
@@ -23,5 +24,4 @@ export const Wrapper = styled.div`
         justify-content: ${alignSet(align)};
         align-items: ${alignSet(valign)};
     `}
-    ${({ theme: { unit } }) => unit}
 `;
