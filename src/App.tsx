@@ -1,8 +1,8 @@
-import { Button, Flex, Grid, Input } from "./Common/UI/Atoms";
 import styled from "styled-components";
 import { Route, Routes } from "react-router-dom";
 import { useState } from "react";
-import { useTyping } from "./Common/Hooks";
+import { useTyping } from "Common/Hooks";
+import { Button, Flex, Grid, Input } from "Common/UI/Atoms";
 
 const App = () => {
     const [state, setState] = useState("");
