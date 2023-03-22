@@ -6,10 +6,15 @@ const index: React.FC<Todo> = ({
     value,
     onChange,
     padding = [8, 12],
+    className,
     ...props
 }) => {
     return (
-        <Wrapper padding={padding} {...props}>
+        <Wrapper
+            className={"input " + (className || "")}
+            padding={padding}
+            {...props}
+        >
             <input
                 value={value}
                 onChange={onChange}

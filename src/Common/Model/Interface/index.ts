@@ -8,7 +8,7 @@ export interface StyleDefaultProps {
     columnArea?: `${number}/${number}`;
     children?: React.ReactNode;
     className?: string;
-    fill?: boolean;
+    flex?: boolean;
 }
 export interface Display extends StyleDefaultProps {
     gap?: [Unit, Unit?];

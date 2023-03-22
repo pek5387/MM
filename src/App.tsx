@@ -3,8 +3,9 @@ import styled from "styled-components";
 import { Route, Routes } from "react-router-dom";
 import { useState } from "react";
 
-function App() {
+const App = () => {
     const [state, setState] = useState("");
+
     return (
         <div className="App">
             <Routes>
@@ -12,9 +13,12 @@ function App() {
                     path="*"
                     element={
                         <Wrapper column={4} row={4}>
-                            <Flex column rowArea={"1/4"} fill>
-                                test1
-                                <Flex fill />
+                            <Flex column rowArea={"1/4"} flex>
+                                {/* {title} */}
+                                <select>
+                                    <option>123</option>
+                                </select>
+                                <Flex />
                             </Flex>
                             <Flex
                                 column
@@ -22,15 +26,13 @@ function App() {
                                 columnArea={"1/4"}
                                 padding={["20px", undefined, "40px"]}
                                 align={"center"}
-                                fill
+                                // flex
                             >
                                 <Input
                                     onChange={(e) => setState(e?.target?.value)}
                                     value={state}
                                 />
-                                <Button disabled fill to={"/dd"}>
-                                    test
-                                </Button>
+                                <Button disabled to={"/dd"}></Button>
                             </Flex>
                         </Wrapper>
                     }
@@ -39,7 +41,7 @@ function App() {
             </Routes>
         </div>
     );
-}
+};
 
 const Wrapper = styled(Grid)`
     height: 80vh;
