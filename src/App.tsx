@@ -2,9 +2,22 @@ import { Button, Flex, Grid, Input } from "./Common/UI/Atoms";
 import styled from "styled-components";
 import { Route, Routes } from "react-router-dom";
 import { useState } from "react";
+import { useTyping } from "./Common/Hooks";
 
 const App = () => {
     const [state, setState] = useState("");
+    const value = useTyping({
+        letters: ["넷다섯여섯", "타입스크립트", "뭘 만들어야 좋을지"],
+        speed: 2000,
+        type: "complate",
+        wait: 800,
+    });
+    const value2 = useTyping({
+        letters: ["하나둘셋", "테스트 진행", "12344567"],
+        type: "complate",
+        speed: 2000,
+        wait: 800,
+    });
 
     return (
         <div className="App">
@@ -13,11 +26,10 @@ const App = () => {
                     path="*"
                     element={
                         <Wrapper column={4} row={4}>
-                            <Flex column rowArea={"1/4"} flex>
+                            <Flex column columnArea={"1/4"} flex>
                                 {/* {title} */}
-                                <select>
-                                    <option>123</option>
-                                </select>
+                                {value}|<br />
+                                {value2}|
                                 <Flex />
                             </Flex>
                             <Flex
