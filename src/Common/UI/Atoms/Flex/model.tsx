@@ -2,6 +2,6 @@ import { Display } from "../../../Model/Interface";
 
 export interface Todo extends Display {
     column?: boolean;
-    fill?: boolean;
+    flex?: boolean;
     wrap?: boolean;
 }
