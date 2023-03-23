@@ -1,46 +1,62 @@
-import { useCallback, useEffect, useState } from "react";
-import { Todo } from "./model";
+import { useEffect, useRef, useState } from "react";
+import { Model } from "./model";
 
-const useTyping = ({ letters, speed = 100, wait = 800 }: Todo) => {
-    const [value, setValue] = useState("");
-    const typing = async (n: number) => {
-        const letter = letters[n].split("");
-        let value = "";
-        while (letter.length) {
-            await ready(speed);
-            value += letter.shift();
-            setValue(value);
+const useTyping = ({ letters, speed, type, wait = 800 }: Model) => {
+    const [state, setState] = useState("");
+    const ref = useRef(0);
+    const firstRef = useRef(false);
+    const typing = async (n: number, value: string = "", overlap: number) => {
+        if (overlap !== ref.current) return;
+        const letter = letters[n];
+        const remain = speed % letter.length;
+        const s =
+            type === "complate" ? (speed - remain) / letter?.length : speed;
+        if (value?.length === letter?.length) {
+            await ready(wait);
+            // 지우는 효과
+            remove(n, overlap);
+        } else {
+            if (firstRef.current) {
+                firstRef.current = false;
+                typing(n, "", overlap);
+            } else {
+                await ready(value ? s : s + remain);
+                const state = letter?.slice(0, value?.length + 1);
+                setState(state);
+                typing(n, state, overlap);
+            }
         }
-        // 잠시 대기
-        await ready(wait);
-
-        // 지우는 효과
-        remove(n);
     };
 
-    const remove = async (n: number) => {
+    const remove = async (n: number, overlap: number) => {
+        if (overlap !== ref.current) return;
         const letter = letters[n].split("");
-
+        const remain = speed % letter.length;
+        const s =
+            type === "complate" ? (speed - remain) / letter?.length : speed;
+        let first = true;
         while (letter.length) {
-            await ready(speed);
-
+            await ready(first ? s + remain : s);
+            first = false;
             letter.pop();
-            setValue(letter.join(""));
+            setState(letter.join(""));
         }
 
         // 다음 순서의 글자로 지정, 타이핑 함수 다시 실행
-        typing(!letters[n + 1] ? 0 : n + 1);
+        typing(!letters[n + 1] ? 0 : n + 1, "", overlap);
     };
 
-    function ready(ms: number) {
+    function ready(ms?: number) {
         return new Promise((res) => setTimeout(res, ms));
     }
 
     useEffect(() => {
-        typing(0);
+        ref.current = ref.current + 1;
+        firstRef.current = true;
+        typing(0, "", ref.current);
     }, []);
 
-    return value;
+    return state;
 };
 
 export default useTyping;
