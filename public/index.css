@@ -101,6 +101,12 @@ a {
 html {
     font-size: 1px;
 }
+
 body {
     font-size: 16rem;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
 }

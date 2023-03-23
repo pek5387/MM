@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import { useState } from "react";
 import { useTyping } from "Common/Hooks";
 import { Button, Flex, Grid, Input } from "Common/UI/Atoms";
+import { Header } from "Common/UI/Template";
 
 const App = () => {
     const [state, setState] = useState("");
@@ -20,7 +21,8 @@ const App = () => {
     });
 
     return (
-        <div className="App">
+        <>
+            <Header />
             <Routes>
                 <Route
                     path="*"
@@ -51,7 +53,7 @@ const App = () => {
                 />
                 <Route path={"/dd"} element={<>테스트 진행</>} />
             </Routes>
-        </div>
+        </>
     );
 };
 
