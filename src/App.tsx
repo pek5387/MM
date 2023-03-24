@@ -1,12 +1,10 @@
 import styled from "styled-components";
 import { Route, Routes } from "react-router-dom";
-import { useState } from "react";
 import { useTyping } from "Common/Hooks";
-import { Button, Flex, Grid, Input } from "Common/UI/Atoms";
+import { Flex, Grid } from "Common/UI/Atoms";
 import { Header } from "Common/UI/Template";
 
-const App = () => {
-    const [state, setState] = useState("");
+const App: React.FC = () => {
     const value = useTyping({
         letters: ["넷다섯여섯", "타입스크립트", "뭘 만들어야 좋을지"],
         speed: 2000,
@@ -29,25 +27,15 @@ const App = () => {
                     element={
                         <Wrapper column={4} row={4}>
                             <Flex column columnArea={"1/4"} flex>
-                                {/* {title} */}
                                 {value}|<br />
                                 {value2}|
                                 <Flex />
                             </Flex>
-                            <Flex
-                                column
-                                rowArea={"2/5"}
-                                columnArea={"1/4"}
-                                padding={["20px", undefined, "40px"]}
-                                align={"center"}
-                                // flex
-                            >
-                                <Input
-                                    onChange={(e) => setState(e?.target?.value)}
-                                    value={state}
-                                />
-                                <Button disabled to={"/dd"}></Button>
-                            </Flex>
+                            {/* <Imgage
+                                src={
+                                    "https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg"
+                                }
+                            /> */}
                         </Wrapper>
                     }
                 />
@@ -59,6 +47,12 @@ const App = () => {
 
 const Wrapper = styled(Grid)`
     height: 80vh;
+`;
+
+const Imgage = styled.img`
+    ${({ theme: { unit } }) => unit}
+    grid-column:1/4;
+    grid-row: 0/4;
 `;
 
 export default App;
